@@ -1,0 +1,12 @@
+import React from 'react';
+
+
+function CalculatorPage(props) {
+  return (
+  <div>
+    <h2>Bem vindo a calculadora!</h2>
+  </div>
+  );
+}
+
+export default CalculatorPage;

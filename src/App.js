@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
 import Person from './Person';
-import WelcomeMessage from './WelcomeMessage';
-import Calculator from './components/Calculator';
+import Routes from './config/routes'
 
 function App() {
-  return (
+  return (<Routes/>
+    
+    /*
     <div>
 
      <h1>Este é um componente do react</h1>
@@ -21,6 +22,7 @@ function App() {
 
 
     </div>
+    */
   );
 }
 
