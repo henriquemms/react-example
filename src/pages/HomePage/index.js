@@ -7,26 +7,7 @@ import '../../components/Header/Header.css';
 function HomePage(props) {
   return (
     <div>
-      <h1 class="tit_pag">Bem vindo ao sistema!</h1>
-
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/calculator">Calculadora</Link>
-            </li>
-            <li>
-              <Link to="/star-wars">Star Wars</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-
-
+    <Header name='Bem vindo!' /> 
     </div>
   );
 }

@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
-<header>
-  
-    <h1 class="tit_pag">{props.name}</h1>
+<header class="back">   
       <div>
-        <Link class="back_home" to="/">Voltar para home</Link>
+        <h1 class="tit_pag">{props.name}</h1>
+        <Link class="back_home" to="/">Home</Link>
+        <Link class="back_home" to="/calculator">Calculadora</Link>
+        <Link class="back_home" to="/star-wars">Star Wars</Link>
       </div>
-
 </header>
   );
 }
