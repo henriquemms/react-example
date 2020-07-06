@@ -1,11 +1,13 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import '../../components/Header/Header.css';
 
 
 function HomePage(props) {
   return (
     <div>
-      <h2>Bem vindo ao sistema!</h2>
+      <h1 class="tit_pag">Bem vindo ao sistema!</h1>
 
       <div>
         <nav>

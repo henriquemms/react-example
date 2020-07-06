@@ -1,10 +1,14 @@
 import React from 'react';
+import Header from '../../components/Header';
+import Calculator from '../../components/Calculator'
 
 
 function CalculatorPage(props) {
   return (
   <div>
-    <h2>Bem vindo a calculadora!</h2>
+    <Header name='Esta é a página da calculadora que só soma' />
+    <br />
+    <Calculator/>
   </div>
   );
 }

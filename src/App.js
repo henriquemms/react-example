@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Person from './Person';
+//import Person from './Person';
 import Routes from './config/routes'
 
 function App() {

@@ -1,12 +1,12 @@
 import React from 'react';
-import HomePage from '../HomePage'
+import Header from '../../components/Header';
 
 
 function StarWarsPage(props) {
   return (
   <div>
-    <h2>Bem vindo ao lado negro da força!</h2>
-    <HomePage />
+    <Header name='Esta é a página que usará a API do Star Wars' />
+
   </div>
   );
 }
