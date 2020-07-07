@@ -41,11 +41,13 @@ class Calculator extends React.Component {
       <form>
         <h3>{this.props.title}</h3>
         <MyInputText label="Valor 1"
+          inputTyper="text"
           name="valueOne"
           value={this.state.valueOne}
           onChange={this.onChange} />
 
         <MyInputText label="Valor 2"
+          inputTyper="text"
           name="valueTwo"
           value={this.state.valueTwo}
           onChange={this.onChange}/>

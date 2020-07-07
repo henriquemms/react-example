@@ -2,26 +2,53 @@ import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Redirect
 } from "react-router-dom";
 
 import CalculatorPage from '../pages/CalculatorPage'
 import StarWarsPage from '../pages/StarWarsPage'
 import HomePage from '../pages/HomePage'
+import LoginPage from '../pages/LoginPage'
+
+
+function SecureRoute ({children, ...rest}){
+  
+    const isAuthenticated = function(){
+      return true;
+    }
+   
+    return (
+      <Route {...rest} 
+        render={
+          props=>
+            isAuthenticated() ? ( 
+                children
+              ) : (
+                <Redirect to={{ pathname : '/login-page', state:{ from: props.location } }} />
+              )
+            }
+    />  
+    )  
+  }
+
 
 export default function Routes() {
     return (
         <Router>    
             <Switch>
-                <Route path="/calculator" exact="true">
+                <SecureRoute path="/calculator" exact={true}>
                     <CalculatorPage />
-                </Route>
-                <Route path="/star-wars" exact="true">
+                </SecureRoute>
+                <SecureRoute path="/star-wars" exact={true}>
                     <StarWarsPage />
+                </SecureRoute>
+                <Route path="/login-page" exact={true}>
+                    <LoginPage />
                 </Route>
-                <Route path="/" exact="true">
+                <SecureRoute path="/" exact={true}>
                     <HomePage />
-                </Route>
+                </SecureRoute>
             </Switch>
         </Router>
 

@@ -1,11 +1,14 @@
 import React from 'react';
+import './MyInputText.css';
 
 
 function MyInputText(props) {
   return (
     <div>
-      <label>{props.label}: </label>
-      <input type="text"
+      <div>
+        <label class="rotulo">{props.label}: </label>
+      </div>
+      <input class="inputText" type={props.inputTyper}
         name={props.name}
         value={props.value}
         onChange={props.onChange}
