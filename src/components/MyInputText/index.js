@@ -6,9 +6,9 @@ function MyInputText(props) {
   return (
     <div>
       <div>
-        <label class="rotulo">{props.label}: </label>
+        <label className="rotulo">{props.label}: </label>
       </div>
-      <input class="inputText" type={props.inputTyper}
+      <input className="inputText" type={props.inputTyper}
         name={props.name}
         value={props.value}
         onChange={props.onChange}

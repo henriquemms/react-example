@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MyInputText from '../MyInputText'
 
 
@@ -55,7 +55,7 @@ class Calculator extends React.Component {
         <button type="button"
           onClick={this.sum}>Calcular</button>
         <br />
-        {this.state.result != "" && <span>O resultado é: {this.state.result}</span>}
+        {this.state.result !== "" && <span>O resultado é: {this.state.result}</span>}
       </form>
 
 

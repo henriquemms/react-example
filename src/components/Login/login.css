@@ -22,3 +22,11 @@
     background-color: rgb(220, 240, 205);
     outline: none;
 }
+
+.blankData{
+    color: pink;
+    font-size: 12px;
+    float: right;
+    font-weight: bolder;
+    font-style: italic;
+}
