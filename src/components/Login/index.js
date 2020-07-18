@@ -1,6 +1,9 @@
 import React from 'react'
+import { Container, Row, Col, Button } from 'react-bootstrap'
+
 import MyInputText from '../MyInputText'
-import './login.css'
+import { BtnConf } from './css'
+import { Divisao } from './css'
 
 class Login extends React.Component {
   constructor (props) {
@@ -27,20 +30,17 @@ class Login extends React.Component {
     var user = 'Henrique'
     var password = '123456'
 
-    if(this.state.login === ''){
-      this.setState({blank_login : '*Informe o usuário'})
-    }
-    else{
-      this.setState({blank_login : ''})
-    }
-
-    if(this.state.pass === ''){
-      this.setState({blank_pass : '*Informe a senha'})
-    }
-    else{
-      this.setState({blank_pass : ''})
+    if (this.state.login === '') {
+      this.setState({ blank_login: '*Informe o usuário' })
+    } else {
+      this.setState({ blank_login: '' })
     }
 
+    if (this.state.pass === '') {
+      this.setState({ blank_pass: '*Informe a senha' })
+    } else {
+      this.setState({ blank_pass: '' })
+    }
 
     if (user === this.state.login && password === this.state.pass) {
       localStorage.setItem('token', 'Viva')
@@ -49,33 +49,39 @@ class Login extends React.Component {
 
   render () {
     return (
-      <form className='formulario'>
-        <MyInputText
-          label='Digite o usuário'
-          inputTyper='text'
-          name='login'
-          value={this.state.login}
-          onChange={this.onChange}
-        />
-        <span className='blankData'>{this.state.blank_login}</span>
+      <Container>
+        <Row className='justify-content-md-center'>
+          <Col md={5}>
+            <Divisao>
+              <MyInputText
+                label='Digite o usuário'
+                inputTyper='text'
+                name='login'
+                value={this.state.login}
+                placeholder='Digite seu usuário para logar'
+                onChange={this.onChange}
+                alerta={this.state.blank_login}
+              />
 
-        <br />
+              <MyInputText
+                label='Digite a senha'
+                inputTyper='password'
+                name='pass'
+                value={this.state.pass}
+                placeholder='Digite sua senha para logar'
+                onChange={this.onChange}
+                alerta={this.state.blank_pass}
+              />
 
-        <MyInputText
-          label='Digite a senha'
-          inputTyper='password'
-          name='pass'
-          value={this.state.pass}
-          onChange={this.onChange}
-        />
-        <span className='blankData'>{this.state.blank_pass}</span>
-
-        <br />
-        <br />
-        <button className='btn' type='button' onClick={this.dateMessage}>
-          Autenticar
-        </button>
-      </form>
+              <BtnConf>
+                <Button variant='success' onClick={this.dateMessage}>
+                  Autenticar
+                </Button>
+              </BtnConf>
+            </Divisao>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }

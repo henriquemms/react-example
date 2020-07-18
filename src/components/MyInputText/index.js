@@ -1,20 +1,24 @@
-import React from 'react';
-import './MyInputText.css';
+import React from 'react'
+import { Form } from 'react-bootstrap'
 
+import { FormInput } from './css'
 
-function MyInputText(props) {
+function MyInputText (props) {
   return (
-    <div>
-      <div>
-        <label className="rotulo">{props.label}: </label>
-      </div>
-      <input className="inputText" type={props.inputTyper}
-        name={props.name}
-        value={props.value}
-        onChange={props.onChange}
-      />
-    </div>
-  );
+    <FormInput>
+      <Form.Group>
+        <Form.Label>{props.label}</Form.Label>
+        <Form.Control
+          type={props.inputTyper}
+          name={props.name}
+          value={props.value}
+          onChange={props.onChange}
+          placeholder={props.placeholder}
+        />
+        <Form.Text className="messageAleta">{props.alerta}</Form.Text>
+      </Form.Group>
+    </FormInput>
+  )
 }
 
-export default MyInputText;
+export default MyInputText
