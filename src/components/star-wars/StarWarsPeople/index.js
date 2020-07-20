@@ -22,10 +22,11 @@ class StarWarsPeople extends React.Component {
 
   onChange = e => {
     e.persist()
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ [e.target.name]: e.target.value, alertaExibe: false })
   }
 
   buscaPersonagem = id => {
+    
     if (id !== '') {
       this.setState({ alertaSemCodigo: 'false' })
 
@@ -43,15 +44,15 @@ class StarWarsPeople extends React.Component {
         })
         .catch(err => {
           this.setState({
-            perso: undefined,
-            alertaSemCodigo: 'true',
+            person: undefined,
+            alertaExibe: 'true',
             alertaVariant: 'danger',
             alertaMensagem: 'Código informado inválido.'
           })
         })
     } else {
       this.setState({
-        alertaSemCodigo: 'true',
+        alertaExibe: 'true',
         alertaVariant: 'warning',
         alertaMensagem: 'Informe o código da personagem'
       })
@@ -93,9 +94,9 @@ class StarWarsPeople extends React.Component {
                 />
 
                 <Alerta
-                  show={this.props.alertaExibe}
-                  variant={this.props.alertaVariant}
-                  mensagem={this.props.alertaMensagem}
+                  show={this.state.alertaExibe}
+                  variant={this.state.alertaVariant}
+                  mensagem={this.state.alertaMensagem}
                 />
 
                 <BtnConf>

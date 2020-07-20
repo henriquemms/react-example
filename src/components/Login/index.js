@@ -1,9 +1,12 @@
-import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Redirect } from "react-router-dom";
 
-import MyInputText from '../MyInputText'
-import { BtnConf } from './css'
-import { Divisao } from './css'
+
+import Alerta from '../Alerta'
+import MyInputText from '../MyInputText';
+import { BtnConf } from './css';
+import { Divisao } from './css';
 
 class Login extends React.Component {
   constructor (props) {
@@ -14,7 +17,10 @@ class Login extends React.Component {
       pass: '',
       blank_login: '',
       blank_pass: '',
-      fail_aut: ''
+      logged: false,
+      alertaExibe: false,
+      alertaVariant: '',
+      alertaMensagem: ''
     }
 
     this.onChange = this.onChange.bind(this)
@@ -43,8 +49,18 @@ class Login extends React.Component {
     }
 
     if (user === this.state.login && password === this.state.pass) {
-      localStorage.setItem('token', 'Viva')
-    }
+      localStorage.setItem('token', 'Viva');
+      this.setState({logged : true,  alertaExibe: false});
+
+    } else if (this.state.login !== '' && this.state.pass !== ''){
+      this.setState({
+        alertaExibe: 'true',
+        alertaVariant: 'danger',
+        alertaMensagem: 'Usuário e/ou senha errado'
+      })
+    } else {
+      this.setState({alertaExibe: false});
+    } 
   }
 
   render () {
@@ -73,11 +89,19 @@ class Login extends React.Component {
                 alerta={this.state.blank_pass}
               />
 
+<Alerta
+                  show={this.state.alertaExibe}
+                  variant={this.state.alertaVariant}
+                  mensagem={this.state.alertaMensagem}
+                />
+
               <BtnConf>
                 <Button variant='success' onClick={this.dateMessage}>
                   Autenticar
                 </Button>
               </BtnConf>
+
+              {this.state.logged&&<Redirect to={{ pathname : '/', state:{ from: this.props.location } }} />}
             </Divisao>
           </Col>
         </Row>

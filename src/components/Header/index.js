@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 
 import { BarraNavegacao, Imagem } from './css'
@@ -12,7 +11,8 @@ class Header extends React.Component {
   }
 
   logoff () {
-    localStorage.removeItem('token')
+    localStorage.removeItem('token');
+
   }
 
   render () {
@@ -50,7 +50,7 @@ class Header extends React.Component {
                 </NavDropdown.Item>
                 <NavDropdown.Item href='O que fazer?'>Perfil</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item onClick={this.logoff}>Sair</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.logoff} href="/login-page">Sair</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

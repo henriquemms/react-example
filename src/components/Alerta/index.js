@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {Alert} from 'react-bootstrap'
+import {Alert} from 'react-bootstrap';
 
 
 function Alerta(props) {
 
     return (
         <>
-            {!!props.show&&(
+            {props.show&&(
                 <Alert variant={props.variant}>
                     {props.mensagem}
                 </Alert>
