@@ -6,6 +6,16 @@ export const Divisao = styled.div`
   margin-top: 10%;
 `
 
+
+
+export const TecladoNUM = styled.div`
+
+.btn{
+  width:90;
+  height:100;
+}
+`
+
 export const BtnConf = styled.div`
   display: block;
   margin-left: auto;

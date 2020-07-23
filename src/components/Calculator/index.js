@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
-import { BtnConf } from './css'
+import { BtnConf, TecladoNUM } from './css'
 import { Divisao } from './css'
 import MyInputText from '../MyInputText'
 
@@ -71,6 +71,28 @@ class Calculator extends React.Component {
             </Divisao>
           </Col>
         </Row>
+
+        <Container>
+          <TecladoNUM>
+            <Row className='justify-content-md-center'>
+              <Col md='auto'>
+                <Button className='.btn' variant='secondary' active>
+                  1
+                </Button>
+              </Col>
+              <Col md='auto'>
+                <Button className='.btn' variant='secondary' active>
+                  2
+                </Button>
+              </Col>
+              <Col md='auto'>
+                <Button className='.btn' variant='secondary' active>
+                  3
+                </Button>
+              </Col>
+            </Row>
+          </TecladoNUM>
+        </Container>
       </Container>
     )
   }
